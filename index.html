@@ -393,9 +393,7 @@
        STATS BAR
     ============================================================ */
     .stats-bar {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 60px, var(--surface) calc(100% - 60px), var(--bg) 100%);
       padding: 0 48px;
     }
     .stats-inner {
@@ -407,18 +405,27 @@
     .stat {
       padding: 28px 24px;
       text-align: center;
-      border-right: 1px solid var(--border);
+      position: relative;
     }
-    .stat:last-child { border-right: none; }
+    .stat::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--border);
+    }
+    .stat:last-child::after { display: none; }
     .stat-num {
       display: block;
-      font-size: 26px;
+      font-size: 2.5rem;
       font-weight: 800;
       color: var(--white);
       letter-spacing: -0.03em;
       line-height: 1.2;
     }
-    .stat-num.gold { color: var(--gold); font-size: 20px; }
+    .stat-num.gold { color: var(--gold); font-size: 1.4rem; }
     .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
     /* ============================================================
@@ -635,9 +642,7 @@
     ============================================================ */
     .angebot {
       padding: 120px 48px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 80px, var(--surface) calc(100% - 80px), var(--bg) 100%);
     }
     .angebot-inner {
       max-width: 1200px;
@@ -770,9 +775,7 @@
     ============================================================ */
     .faq {
       padding: 120px 48px 72px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 80px, var(--surface) calc(100% - 80px), var(--bg) 100%);
     }
     .faq-inner {
       max-width: 1200px;
@@ -901,8 +904,7 @@
        FOOTER
     ============================================================ */
     .footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
+      background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 60px);
       padding: 28px 48px;
     }
     .footer-inner {
@@ -976,14 +978,14 @@
       .hero-sub { font-size: 15px; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
-      .hero-visual { height: 320px; overflow: hidden; }
+      .hero-visual { display: none; }
       .browser { width: 220px; }
       .browser:nth-child(1) { top: 70px; left: 44px; }
       .browser:nth-child(2) { top: 36px; left: 24px; }
       .stats-bar { padding: 0 20px; }
       .stat { padding: 22px 12px; }
-      .stat-num { font-size: 20px; }
-      .stat-num.gold { font-size: 16px; }
+      .stat-num { font-size: 1.8rem; }
+      .stat-num.gold { font-size: 1.1rem; }
       .projekte, .leistungen, .angebot, .ablauf { padding: 72px 20px; }
       .angebot { padding: 72px 20px; }
       .faq { padding: 72px 20px 48px; }
@@ -1399,7 +1401,7 @@
       <span class="label-tag" style="display:block;margin-bottom:12px;">FAQ</span>
       <h2 class="faq-title">Häufige Fragen</h2>
       <p class="faq-sub">Haben Sie weitere Fragen? Ich freue mich auf Ihre Nachricht.</p>
-      <a href="#kontakt" class="btn btn--outline">Frage stellen</a>
+      <a href="#kontakt" class="btn btn--primary">Frage stellen</a>
     </div>
     <div class="faq-right reveal reveal-d2">
       <div id="accordion" role="list">
