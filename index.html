@@ -943,6 +943,36 @@
     }
 
     /* ============================================================
+       WARUM BAALBAKI
+    ============================================================ */
+    .warum {
+      padding: 160px 0 120px;
+    }
+    .warum-headline { margin-bottom: 0; }
+    .warum-headline .warum-sub-label {
+      display: block;
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .warum-headline .warum-main-label {
+      display: block;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .warum-subtext {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    /* ============================================================
        RESPONSIVE – TABLET (≤1024px)
     ============================================================ */
     @media (max-width: 1024px) {
@@ -957,6 +987,7 @@
       .stat:nth-child(1), .stat:nth-child(2) {
         border-bottom: 1px solid var(--border);
       }
+      .warum { padding: 80px 0; }
       .projekte, .leistungen, .angebot, .ablauf, .kontakt { padding: 48px 40px; }
       .faq { padding: 88px 40px 56px; }
       .kontakt { padding: 64px 40px 88px; }
@@ -996,6 +1027,7 @@
       .stat { padding: 22px 12px; }
       .stat-num { font-size: 1.8rem; }
       .stat-num.gold { font-size: 1.1rem; }
+      .warum { padding: 100px 0 60px; }
       .projekte, .leistungen, .angebot, .ablauf { padding: 36px 20px; }
       .angebot { padding: 36px 20px; }
       .faq { padding: 72px 20px 48px; }
@@ -1248,6 +1280,44 @@
     </div>
   </div>
 </div>
+
+<!-- ============================================================
+     WARUM BAALBAKI
+============================================================ -->
+<section class="warum" id="warum">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="warum-headline">
+        <span class="warum-sub-label">Warum</span>
+        <span class="warum-main-label">Baalbaki Web Studio?</span>
+      </h2>
+      <p class="warum-subtext">Weil Ihre Website mehr sein soll als eine digitale Visitenkarte.</p>
+    </div>
+    <div class="features-grid reveal reveal-d1">
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="feature-title">Fokus auf Schweizer KMU</h3>
+        <p class="feature-desc">Wir kennen den Schweizer Markt und wissen, was lokale Unternehmen brauchen, um online neue Kunden zu gewinnen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 class="feature-title">Schnelle Umsetzung</h3>
+        <p class="feature-desc">Ihre Website ist in 2–4 Wochen online — ohne unnötige Komplexität, ohne technischen Stress.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3 class="feature-title">Klare Resultate</h3>
+        <p class="feature-desc">Keine Spielerei — sondern Websites, die Vertrauen schaffen, Besucher überzeugen und Anfragen generieren.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      PROJEKTE
