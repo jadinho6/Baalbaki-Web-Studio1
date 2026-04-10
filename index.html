@@ -850,6 +850,32 @@
     .accordion-content { padding: 0 0 22px; font-size: 14px; color: var(--muted); line-height: 1.8; }
 
     /* ============================================================
+       CTA
+    ============================================================ */
+    .cta-section {
+      padding: 100px 48px;
+      background: var(--bg);
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .cta-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* ============================================================
        KONTAKT
     ============================================================ */
     .kontakt { padding: 80px 48px 120px; }
@@ -990,6 +1016,7 @@
       .warum { padding: 80px 0; }
       .projekte, .leistungen, .angebot, .ablauf, .kontakt { padding: 48px 40px; }
       .faq { padding: 88px 40px 56px; }
+      .cta-section { padding: 72px 40px; }
       .kontakt { padding: 64px 40px 88px; }
       .project-block, .project-block--reverse { grid-template-columns: 1fr; }
       .project-block--reverse .project-preview { order: 0; }
@@ -1031,6 +1058,7 @@
       .projekte, .leistungen, .angebot, .ablauf { padding: 36px 20px; }
       .angebot { padding: 36px 20px; }
       .faq { padding: 72px 20px 48px; }
+      .cta-section { padding: 60px 20px; }
       .kontakt { padding: 52px 20px 72px; }
       .section-header { margin-bottom: 48px; }
       .features-grid { grid-template-columns: 1fr; }
@@ -1688,6 +1716,17 @@
 
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+============================================================ -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">Bereit für mehr Kunden über Ihre Website?</h2>
+    <p class="cta-sub">Sichern Sie sich ein kostenloses Erstgespräch — wir planen gemeinsam Ihre neue Website und zeigen Ihnen, was möglich ist.</p>
+    <a href="#kontakt" class="btn btn--primary">Jetzt kostenlos anfragen</a>
   </div>
 </section>
 
