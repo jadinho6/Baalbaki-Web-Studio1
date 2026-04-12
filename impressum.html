@@ -57,11 +57,20 @@
       border-bottom-color: var(--border);
     }
     .nav-logo {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.03em;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .nav-logo svg {
+      width: 260px;
+      height: 50px;
+    }
+    @media (max-width: 640px) {
+      .nav-logo svg {
+        width: 200px;
+        height: 38px;
+      }
     }
     .nav-links {
       display: flex;
@@ -231,7 +240,31 @@
 <body>
 
 <nav class="nav" id="nav" aria-label="Hauptnavigation">
-  <a href="index.html" class="nav-logo">Baalbaki Web Studio</a>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 340 60" xmlns="http://www.w3.org/2000/svg">
+      <!-- B mark -->
+      <rect x="0" y="2" width="48" height="56" rx="7" fill="#2563EB"/>
+      <rect x="7" y="9" width="30" height="18" rx="4" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="7" y="9" width="22" height="8" rx="4" fill="white"/>
+      <rect x="7" y="33" width="30" height="18" rx="4" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="7" y="33" width="26" height="8" rx="4" fill="white"/>
+      <rect x="7" y="25" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+      <!-- BAALBAKI text -->
+      <text x="62" y="36"
+        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="26"
+        font-weight="800"
+        letter-spacing="-0.5"
+        fill="white">BAALBAKI</text>
+      <!-- WEB STUDIO text -->
+      <text x="64" y="50"
+        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="10"
+        font-weight="500"
+        letter-spacing="3.5"
+        fill="rgba(255,255,255,0.6)">WEB STUDIO</text>
+    </svg>
+  </a>
   <ul class="nav-links" role="list">
     <li><a href="index.html#projekte">Projekte</a></li>
     <li><a href="index.html#angebot">Angebot</a></li>
@@ -261,25 +294,44 @@
     <h1>Impressum</h1>
     <p class="legal-meta">Stand: April 2026</p>
 
-    <h2>Angaben gemäss Art. 10 ZGB</h2>
-    <div class="legal-placeholder">
-      Hier folgt der vollständige Impressumstext — Name, Adresse, Kontaktdaten etc.
-    </div>
+    <h2>Angaben gemäss Art. 10 UWG</h2>
+    <p>
+      Baalbaki Web Studio<br>
+      Jad Baalbaki<br>
+      Täfernstrasse 4<br>
+      5405 Baden<br>
+      Schweiz
+    </p>
 
     <h2>Kontakt</h2>
-    <div class="legal-placeholder">
-      E-Mail, Telefon und weitere Kontaktmöglichkeiten.
-    </div>
+    <p>
+      E-Mail: <a href="mailto:baalbaki@web-studio.ch">baalbaki@web-studio.ch</a><br>
+      Telefon: <a href="tel:+41774520364">+41 77 452 03 64</a>
+    </p>
 
     <h2>Haftungsausschluss</h2>
-    <div class="legal-placeholder">
-      Haftungsausschluss für Inhalte und Links.
-    </div>
+    <p>
+      Die Inhalte unserer Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+    </p>
+    <p>
+      Als Diensteanbieter sind wir gemäss den anwendbaren gesetzlichen Bestimmungen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+    </p>
+    <p>
+      Haftungsansprüche gegen den Betreiber wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen, soweit kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+    </p>
 
     <h2>Urheberrecht</h2>
-    <div class="legal-placeholder">
-      Hinweis auf Urheberrecht und Nutzungsbedingungen für Inhalte dieser Website.
-    </div>
+    <p>
+      Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
+    </p>
+    <p>
+      Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+    </p>
   </div>
 </main>
 
