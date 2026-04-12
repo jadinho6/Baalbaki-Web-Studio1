@@ -152,51 +152,71 @@
 
     /* CONTENT */
     .legal-page {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 140px 48px 100px;
+      padding: 140px 48px 120px;
     }
-    .legal-page h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .legal-page .legal-meta {
-      font-size: 13px;
-      color: var(--dim);
+
+    .legal-header {
       margin-bottom: 56px;
     }
-    .legal-page h2 {
-      font-size: 18px;
+    .legal-header .page-label {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-    .legal-page p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.75;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
       margin-bottom: 16px;
     }
-    .legal-page a {
+    .legal-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .legal-header .legal-meta {
+      font-size: 13px;
+      color: var(--dim);
+    }
+    .legal-divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--blue), rgba(37,99,235,0.1), transparent);
+      margin-top: 28px;
+    }
+
+    .legal-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .legal-section h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .legal-section p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section a {
+      color: var(--white);
       text-decoration: underline;
       text-underline-offset: 3px;
+      transition: color var(--t);
     }
-    .legal-page a:hover { color: var(--white); }
-    .legal-placeholder {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      color: var(--dim);
-      font-size: 14px;
-      font-style: italic;
-      margin-top: 16px;
-    }
+    .legal-section a:hover { color: var(--blue); }
 
     /* FOOTER */
     .footer {
@@ -231,6 +251,7 @@
       .nav-links, .nav-cta-desktop { display: none; }
       .hamburger { display: flex; }
       .legal-page { padding: 120px 20px 80px; }
+      .legal-section { padding: 22px 20px; }
       .footer { padding: 24px 20px; }
       .footer-inner { grid-template-columns: 1fr; gap: 20px; }
       .footer-copy { text-align: left; }
@@ -291,47 +312,63 @@
 
 <main>
   <div class="legal-page">
-    <h1>Impressum</h1>
-    <p class="legal-meta">Stand: April 2026</p>
 
-    <h2>Angaben gemäss Art. 10 UWG</h2>
-    <p>
-      Baalbaki Web Studio<br>
-      Jad Baalbaki<br>
-      Täfernstrasse 4<br>
-      5405 Baden<br>
-      Schweiz
-    </p>
+    <div class="legal-header">
+      <span class="page-label">Rechtliches</span>
+      <h1>Impressum</h1>
+      <p class="legal-meta">Stand: April 2026</p>
+      <div class="legal-divider"></div>
+    </div>
 
-    <h2>Kontakt</h2>
-    <p>
-      E-Mail: <a href="mailto:baalbaki@web-studio.ch">baalbaki@web-studio.ch</a><br>
-      Telefon: <a href="tel:+41774520364">+41 77 452 03 64</a>
-    </p>
+    <div class="legal-section">
+      <h2>Angaben gemäss Art. 10 UWG</h2>
+      <p>
+        Baalbaki Web Studio<br>
+        Jad Baalbaki<br>
+        Täfernstrasse 4<br>
+        5405 Baden<br>
+        Schweiz
+      </p>
+    </div>
 
-    <h2>Haftungsausschluss</h2>
-    <p>
-      Die Inhalte unserer Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-    </p>
-    <p>
-      Als Diensteanbieter sind wir gemäss den anwendbaren gesetzlichen Bestimmungen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-    </p>
-    <p>
-      Haftungsansprüche gegen den Betreiber wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen, soweit kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
-    </p>
+    <div class="legal-section">
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:baalbaki@web-studio.ch">baalbaki@web-studio.ch</a><br>
+        Telefon: <a href="tel:+41774520364">+41 77 452 03 64</a>
+      </p>
+    </div>
 
-    <h2>Haftung für Links</h2>
-    <p>
-      Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-    </p>
+    <div class="legal-section">
+      <h2>Haftungsausschluss</h2>
+      <p>
+        Die Inhalte unserer Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+      </p>
+      <p>
+        Als Diensteanbieter sind wir gemäss den anwendbaren gesetzlichen Bestimmungen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+      </p>
+      <p>
+        Haftungsansprüche gegen den Betreiber wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen, soweit kein nachweislich vorsätzliches oder grobfahrlässiges Verschulden vorliegt.
+      </p>
+    </div>
 
-    <h2>Urheberrecht</h2>
-    <p>
-      Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
-    </p>
-    <p>
-      Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-    </p>
+    <div class="legal-section">
+      <h2>Haftung für Links</h2>
+      <p>
+        Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Urheberrecht</h2>
+      <p>
+        Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
+      </p>
+      <p>
+        Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </div>
+
   </div>
 </main>
 
