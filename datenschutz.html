@@ -152,51 +152,92 @@
 
     /* CONTENT */
     .legal-page {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 140px 48px 100px;
+      padding: 140px 48px 120px;
     }
-    .legal-page h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .legal-page .legal-meta {
-      font-size: 13px;
-      color: var(--dim);
+
+    .legal-header {
       margin-bottom: 56px;
     }
-    .legal-page h2 {
-      font-size: 18px;
+    .legal-header .page-label {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-    .legal-page p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.75;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
       margin-bottom: 16px;
     }
-    .legal-page a {
+    .legal-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .legal-header .legal-meta {
+      font-size: 13px;
+      color: var(--dim);
+    }
+    .legal-divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--blue), rgba(37,99,235,0.1), transparent);
+      margin-top: 28px;
+    }
+
+    .legal-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .legal-section h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .legal-section p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    .legal-section ul li {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 18px;
+      position: relative;
+    }
+    .legal-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .legal-section a {
+      color: var(--white);
       text-decoration: underline;
       text-underline-offset: 3px;
+      transition: color var(--t);
     }
-    .legal-page a:hover { color: var(--white); }
-    .legal-placeholder {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      color: var(--dim);
-      font-size: 14px;
-      font-style: italic;
-      margin-top: 16px;
-    }
+    .legal-section a:hover { color: var(--blue); }
 
     /* FOOTER */
     .footer {
@@ -231,6 +272,7 @@
       .nav-links, .nav-cta-desktop { display: none; }
       .hamburger { display: flex; }
       .legal-page { padding: 120px 20px 80px; }
+      .legal-section { padding: 22px 20px; }
       .footer { padding: 24px 20px; }
       .footer-inner { grid-template-columns: 1fr; gap: 20px; }
       .footer-copy { text-align: left; }
@@ -291,43 +333,120 @@
 
 <main>
   <div class="legal-page">
-    <h1>Datenschutzerklärung</h1>
-    <p class="legal-meta">Stand: April 2026</p>
 
-    <h2>Verantwortliche Stelle</h2>
-    <div class="legal-placeholder">
-      Name und Kontaktdaten der verantwortlichen Stelle gemäss DSG/DSGVO.
+    <div class="legal-header">
+      <span class="page-label">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+      <p class="legal-meta">Stand: April 2026</p>
+      <div class="legal-divider"></div>
     </div>
 
-    <h2>Welche Daten wir erheben</h2>
-    <div class="legal-placeholder">
-      Beschreibung der erhobenen Daten (z.B. Kontaktformular, Server-Logs etc.).
+    <div class="legal-section">
+      <h2>1. Allgemeine Hinweise</h2>
+      <p>
+        Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften der Schweiz (DSG) sowie dieser Datenschutzerklärung.
+      </p>
     </div>
 
-    <h2>Zweck der Datenverarbeitung</h2>
-    <div class="legal-placeholder">
-      Erläuterung, wofür die Daten verwendet werden.
+    <div class="legal-section">
+      <h2>2. Verantwortliche Stelle</h2>
+      <p>
+        Baalbaki Web Studio<br>
+        Jad Baalbaki<br>
+        Täfernstrasse 4<br>
+        5405 Baden<br>
+        Schweiz<br>
+        E-Mail: <a href="mailto:baalbaki@web-studio.ch">baalbaki@web-studio.ch</a>
+      </p>
     </div>
 
-    <h2>Weitergabe von Daten</h2>
-    <div class="legal-placeholder">
-      Angaben zu Drittanbietern und Datenweitergabe.
+    <div class="legal-section">
+      <h2>3. Erhebung und Verarbeitung personenbezogener Daten</h2>
+      <p>
+        Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen einer Anfrage freiwillig mitteilen, beispielsweise über das Kontaktformular oder per E-Mail.
+      </p>
+      <p>Dabei können folgende Daten verarbeitet werden:</p>
+      <ul>
+        <li>Name</li>
+        <li>E-Mail-Adresse</li>
+        <li>Nachricht / Anfrage</li>
+      </ul>
     </div>
 
-    <h2>Ihre Rechte</h2>
-    <div class="legal-placeholder">
-      Auskunft, Berichtigung, Löschung, Widerspruch — Ihre Rechte gemäss DSG/DSGVO.
+    <div class="legal-section">
+      <h2>4. Zweck der Datenverarbeitung</h2>
+      <p>
+        Die von Ihnen übermittelten Daten verwenden wir ausschliesslich zur Bearbeitung Ihrer Anfrage sowie für eine allfällige weitere geschäftliche Kommunikation.
+      </p>
     </div>
 
-    <h2>Cookies</h2>
-    <div class="legal-placeholder">
-      Information zur Cookie-Nutzung auf dieser Website.
+    <div class="legal-section">
+      <h2>5. Hosting</h2>
+      <p>Unsere Website wird bei einem externen Dienstleister gehostet.</p>
+      <p>
+        Vercel Inc.<br>
+        440 N Barranca Ave #4133<br>
+        Covina, CA 91723<br>
+        USA
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel:
+        <a href="https://vercel.com/legal/privacy-policy" target="_blank">https://vercel.com/legal/privacy-policy</a>
+      </p>
     </div>
 
-    <h2>Kontakt bei Datenschutzfragen</h2>
-    <div class="legal-placeholder">
-      E-Mail-Adresse für Datenschutzanfragen.
+    <div class="legal-section">
+      <h2>6. Web Analytics</h2>
+      <p>
+        Wir nutzen auf unserer Website Vercel Web Analytics, einen Dienst der Vercel Inc., zur anonymen Auswertung des Nutzerverhaltens.
+      </p>
+      <p>
+        Vercel Web Analytics verwendet keine Cookies und verarbeitet keine personenbezogenen Daten, die direkt einer Person zugeordnet werden können. Die Auswertung erfolgt auf Basis anonymisierter Daten wie Seitenaufrufen und technischen Informationen.
+      </p>
+      <p>
+        Die Verarbeitung erfolgt auf Servern von Vercel. Dabei kann eine Übermittlung von Daten in die USA nicht ausgeschlossen werden.
+      </p>
     </div>
+
+    <div class="legal-section">
+      <h2>7. Kontaktformular</h2>
+      <p>
+        Wenn Sie uns über das Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+      </p>
+      <p>Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Server-Log-Dateien</h2>
+      <p>
+        Der Hosting-Anbieter erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt.
+      </p>
+      <p>Dies sind insbesondere:</p>
+      <ul>
+        <li>IP-Adresse</li>
+        <li>Browsertyp und Browserversion</li>
+        <li>verwendetes Betriebssystem</li>
+        <li>Referrer URL</li>
+        <li>Hostname des zugreifenden Rechners</li>
+        <li>Uhrzeit der Serveranfrage</li>
+      </ul>
+      <p>Diese Daten sind nicht bestimmten Personen zuordenbar.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Ihre Rechte</h2>
+      <p>
+        Sie haben das Recht, jederzeit unentgeltlich Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten. Sie haben zudem das Recht auf Berichtigung oder Löschung dieser Daten, sofern keine gesetzliche Aufbewahrungspflicht besteht.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Änderungen</h2>
+      <p>
+        Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Es gilt jeweils die auf dieser Website veröffentlichte Version.
+      </p>
+    </div>
+
   </div>
 </main>
 
