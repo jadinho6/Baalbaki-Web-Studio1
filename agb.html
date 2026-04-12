@@ -152,51 +152,92 @@
 
     /* CONTENT */
     .legal-page {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 140px 48px 100px;
+      padding: 140px 48px 120px;
     }
-    .legal-page h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-    .legal-page .legal-meta {
-      font-size: 13px;
-      color: var(--dim);
+
+    .legal-header {
       margin-bottom: 56px;
     }
-    .legal-page h2 {
-      font-size: 18px;
+    .legal-header .page-label {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-    .legal-page p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.75;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
       margin-bottom: 16px;
     }
-    .legal-page a {
+    .legal-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .legal-header .legal-meta {
+      font-size: 13px;
+      color: var(--dim);
+    }
+    .legal-divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--blue), rgba(37,99,235,0.1), transparent);
+      margin-top: 28px;
+    }
+
+    .legal-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .legal-section h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .legal-section p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    .legal-section ul li {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 18px;
+      position: relative;
+    }
+    .legal-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .legal-section a {
+      color: var(--white);
       text-decoration: underline;
       text-underline-offset: 3px;
+      transition: color var(--t);
     }
-    .legal-page a:hover { color: var(--white); }
-    .legal-placeholder {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      color: var(--dim);
-      font-size: 14px;
-      font-style: italic;
-      margin-top: 16px;
-    }
+    .legal-section a:hover { color: var(--blue); }
 
     /* FOOTER */
     .footer {
@@ -231,6 +272,7 @@
       .nav-links, .nav-cta-desktop { display: none; }
       .hamburger { display: flex; }
       .legal-page { padding: 120px 20px 80px; }
+      .legal-section { padding: 22px 20px; }
       .footer { padding: 24px 20px; }
       .footer-inner { grid-template-columns: 1fr; gap: 20px; }
       .footer-copy { text-align: left; }
@@ -291,53 +333,92 @@
 
 <main>
   <div class="legal-page">
-    <h1>Allgemeine Geschäftsbedingungen</h1>
-    <p class="legal-meta">Stand: April 2026</p>
 
-    <h2>§ 1 Geltungsbereich</h2>
-    <div class="legal-placeholder">
-      Angaben zum Geltungsbereich dieser AGB und zur Vertragsbeziehung.
+    <div class="legal-header">
+      <span class="page-label">Rechtliches</span>
+      <h1>Allgemeine Geschäftsbedingungen</h1>
+      <p class="legal-meta">Stand: April 2026</p>
+      <div class="legal-divider"></div>
     </div>
 
-    <h2>§ 2 Leistungsumfang</h2>
-    <div class="legal-placeholder">
-      Beschreibung der angebotenen Dienstleistungen und des Liefer-/Leistungsumfangs.
+    <div class="legal-section">
+      <h2>§ 1 Geltungsbereich</h2>
+      <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Angebote, Dienstleistungen und Verträge zwischen Baalbaki Web Studio, Jad Baalbaki, und seinen Kunden.</p>
+      <p>Abweichende Vereinbarungen sind nur verbindlich, wenn sie schriftlich festgehalten werden. Individuelle Offerten und Vereinbarungen gehen diesen AGB vor.</p>
     </div>
 
-    <h2>§ 3 Vertragsabschluss</h2>
-    <div class="legal-placeholder">
-      Informationen zum Ablauf des Vertragsabschlusses und zur Auftragsbestätigung.
+    <div class="legal-section">
+      <h2>§ 2 Angebot und Vertragsabschluss</h2>
+      <p>Alle Angebote sind freibleibend und unverbindlich. Ein Vertrag kommt erst durch schriftliche Bestätigung der Offerte (z. B. per E-Mail) zustande.</p>
+      <p>Die auf der Website genannten Preise (z. B. "ab CHF 2'900") dienen lediglich als Richtwerte und sind nicht verbindlich.</p>
     </div>
 
-    <h2>§ 4 Preise und Zahlung</h2>
-    <div class="legal-placeholder">
-      Preisgestaltung, Zahlungsmodalitäten, Fälligkeit und Mehrwertsteuer.
+    <div class="legal-section">
+      <h2>§ 3 Leistungsumfang</h2>
+      <p>Der genaue Leistungsumfang ergibt sich aus der individuellen Offerte. Nicht ausdrücklich enthaltene Leistungen sind nicht Bestandteil des Vertrages und werden separat verrechnet.</p>
+      <p>Hosting, Domain und Wartung sind nicht Bestandteil der angebotenen Leistungen, sofern nicht ausdrücklich anders vereinbart.</p>
     </div>
 
-    <h2>§ 5 Mitwirkungspflichten des Auftraggebers</h2>
-    <div class="legal-placeholder">
-      Pflichten des Kunden zur rechtzeitigen Bereitstellung von Inhalten und Feedback.
+    <div class="legal-section">
+      <h2>§ 4 Preise und Zahlungsbedingungen</h2>
+      <p>Die Vergütung erfolgt gemäss individueller Offerte.</p>
+      <p>In der Regel gilt folgende Zahlungsstruktur:</p>
+      <ul>
+        <li>30% des Gesamtbetrags bei Auftragserteilung</li>
+        <li>70% vor Übergabe bzw. Veröffentlichung der Website</li>
+      </ul>
+      <p>Die Website wird erst nach vollständiger Bezahlung übergeben oder veröffentlicht.</p>
+      <p>Bei Zahlungsverzug behält sich Baalbaki Web Studio das Recht vor, Leistungen zurückzuhalten oder zu pausieren.</p>
     </div>
 
-    <h2>§ 6 Urheberrecht und Nutzungsrechte</h2>
-    <div class="legal-placeholder">
-      Eigentum an den erstellten Werken und Rechteübertragung nach vollständiger Bezahlung.
+    <div class="legal-section">
+      <h2>§ 5 Mitwirkungspflichten des Auftraggebers</h2>
+      <p>Der Auftraggeber verpflichtet sich, alle zur Umsetzung notwendigen Inhalte (Texte, Bilder, Logos, Zugangsdaten etc.) rechtzeitig zur Verfügung zu stellen.</p>
+      <p>Verzögerungen aufgrund fehlender Mitwirkung des Auftraggebers führen zu einer entsprechenden Anpassung des Zeitplans.</p>
+      <p>Baalbaki Web Studio ist berechtigt, Projekte zu pausieren oder mit Platzhalter-Inhalten abzuschliessen, wenn notwendige Inhalte nicht geliefert werden.</p>
     </div>
 
-    <h2>§ 7 Gewährleistung und Haftung</h2>
-    <div class="legal-placeholder">
-      Gewährleistungsrechte, Haftungsbeschränkungen und Ausschlüsse.
+    <div class="legal-section">
+      <h2>§ 6 Termine und Verzögerungen</h2>
+      <p>Angegebene Liefertermine sind Richtwerte und nicht verbindlich, sofern sie nicht ausdrücklich schriftlich als verbindlich vereinbart wurden.</p>
+      <p>Verzögerungen durch den Auftraggeber oder durch externe Faktoren liegen nicht im Verantwortungsbereich von Baalbaki Web Studio.</p>
     </div>
 
-    <h2>§ 8 Kündigung und Rücktritt</h2>
-    <div class="legal-placeholder">
-      Bedingungen für Kündigung und Rücktritt vom Vertrag.
+    <div class="legal-section">
+      <h2>§ 7 Abnahme und Mängel</h2>
+      <p>Nach Fertigstellung wird die Website dem Auftraggeber zur Prüfung übergeben.</p>
+      <p>Der Auftraggeber hat die Website innerhalb von 7 Tagen zu prüfen und allfällige Mängel schriftlich mitzuteilen.</p>
+      <p>Erfolgt innerhalb dieser Frist keine Rückmeldung, gilt die Website als abgenommen.</p>
+      <p>Nachträgliche Änderungen, die nicht auf Mängel zurückzuführen sind, werden separat verrechnet.</p>
     </div>
 
-    <h2>§ 9 Anwendbares Recht und Gerichtsstand</h2>
-    <div class="legal-placeholder">
-      Schweizer Recht ist anwendbar. Gerichtsstand: [Ort einfügen].
+    <div class="legal-section">
+      <h2>§ 8 Urheberrecht und Nutzungsrechte</h2>
+      <p>Alle erstellten Inhalte, Designs und Codes bleiben bis zur vollständigen Bezahlung Eigentum von Baalbaki Web Studio.</p>
+      <p>Nach vollständiger Bezahlung erhält der Auftraggeber das uneingeschränkte Nutzungsrecht an der Website.</p>
+      <p>Baalbaki Web Studio behält sich das Recht vor, erstellte Projekte als Referenz zu verwenden, sofern der Auftraggeber dem nicht ausdrücklich widerspricht.</p>
     </div>
+
+    <div class="legal-section">
+      <h2>§ 9 Gewährleistung und Haftung</h2>
+      <p>Baalbaki Web Studio haftet nicht für Inhalte, die vom Auftraggeber bereitgestellt werden.</p>
+      <p>Ebenso wird keine Haftung für externe Dienste, Hosting-Anbieter oder Drittanbieter übernommen.</p>
+      <p>Die Haftung ist, soweit gesetzlich zulässig, auf Vorsatz und grobe Fahrlässigkeit beschränkt.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>§ 10 Kündigung und Projektabbruch</h2>
+      <p>Der Auftraggeber kann den Vertrag jederzeit kündigen.</p>
+      <p>In diesem Fall sind alle bis dahin erbrachten Leistungen vollständig zu vergüten.</p>
+      <p>Bereits geleistete Zahlungen werden nicht zurückerstattet.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>§ 11 Schlussbestimmungen</h2>
+      <p>Es gilt ausschliesslich Schweizer Recht.</p>
+      <p>Gerichtsstand ist der Sitz von Baalbaki Web Studio, sofern gesetzlich zulässig.</p>
+    </div>
+
   </div>
 </main>
 
