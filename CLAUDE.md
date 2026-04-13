@@ -9,7 +9,7 @@ Der Besucher soll innerhalb von 30 Sekunden verstehen: Was wird angeboten, was k
 - **Studio-Name:** Baalbaki Web Studio
 - **Standort:** Schweiz
 - **Spezialisierung:** Moderne Websites für Schweizer KMU
-- **E-Mail:** hallo@baalbaki-web.ch
+- **E-Mail:** info@baalbaki-web-studio.ch
 - **Logo:** Wird später eingefügt – vorerst Text-Wordmark "Baalbaki Web Studio" verwenden
 
 ## Zielgruppe der Website
