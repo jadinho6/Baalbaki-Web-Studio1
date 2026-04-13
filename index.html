@@ -654,7 +654,7 @@
        ANGEBOT
     ============================================================ */
     .angebot {
-      padding: 80px 48px;
+      padding: 60px 48px;
       background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 80px, var(--surface) calc(100% - 80px), var(--bg) 100%);
     }
     .angebot-container {
@@ -666,7 +666,7 @@
     .angebot-switcher {
       display: flex;
       justify-content: center;
-      margin-bottom: 64px;
+      margin-bottom: 32px;
     }
     .angebot-switcher-inner {
       display: inline-flex;
@@ -716,11 +716,11 @@
     .angebot-panel { display: none; }
     .angebot-panel.active {
       display: block;
-      animation: panelFadeIn 0.35s ease both;
+      animation: panelFadeIn 0.2s ease both;
     }
     @keyframes panelFadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
     /* Grid layout */
@@ -798,6 +798,18 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gold);
+    }
+    .badge-wrap-neutral {
+      padding: 10px 24px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .badge-wrap-neutral span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dim);
     }
     .angebot-card-body { padding: 36px 40px; }
     .angebot-card-title { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 24px; }
@@ -1151,7 +1163,7 @@
       .stat-num.gold { font-size: 1.1rem; }
       .warum { padding: 100px 0 60px; }
       .projekte, .leistungen, .angebot, .ablauf { padding: 36px 20px; }
-      .angebot { padding: 36px 20px; }
+      .angebot { padding: 28px 20px; }
       .faq { padding: 72px 20px 48px; }
       .cta-section { padding: 60px 20px; }
       .kontakt { padding: 52px 20px 72px; }
@@ -1670,7 +1682,7 @@
           <p class="angebot-desc">Eine professionelle Website, die Kunden überzeugt — ohne technisches Know-how, ohne versteckte Kosten, ohne Stress.</p>
           <div class="price-block">
             <div class="price-ab">Einmalig</div>
-            <div class="price-amount">CHF 2'900</div>
+            <div class="price-amount">ab CHF 2'900</div>
             <div class="price-line"></div>
           </div>
           <p class="price-note">Kein Abo. Keine versteckten Kosten. Sie bezahlen einmal – und besitzen Ihre Website.</p>
@@ -1678,6 +1690,9 @@
         </div>
         <div class="reveal reveal-d2">
           <div class="angebot-card">
+            <div class="badge-wrap-neutral">
+              <span>Einmalig &amp; Unabhängig</span>
+            </div>
             <div class="angebot-card-body">
               <h3 class="angebot-card-title">Was enthalten ist</h3>
               <ul class="check-list">
@@ -1724,12 +1739,12 @@
           <span class="label-tag angebot-label">RUNDUM-SORGLOS</span>
           <h2 class="angebot-title">Website + alles inklusive</h2>
           <p class="angebot-desc">Wir kümmern uns um alles – Domain, Hosting, Updates und Support. Sie fokussieren sich auf Ihr Geschäft.</p>
-          <div class="price-block-dual">
-            <div class="price-setup-line">CHF 2'900 Einmalig</div>
+          <div class="price-block">
             <div class="price-ab">Monatlich</div>
-            <div class="price-amount">+ CHF 49</div>
+            <div class="price-amount">CHF 49<span style="font-size:0.45em; font-weight:700; letter-spacing:0; margin-left:6px; vertical-align:middle; color:var(--gold);">/ Monat</span></div>
             <div class="price-line"></div>
           </div>
+          <p class="price-note" style="font-size:13px; color:var(--dim);">Zzgl. ab CHF 2'900 einmalige Erstellungsgebühr</p>
           <p class="price-note">Einmalige Erstellung, danach monatlich kündbar. Keine versteckten Kosten.</p>
           <a href="#kontakt" class="btn btn--primary">Projekt anfragen</a>
         </div>
