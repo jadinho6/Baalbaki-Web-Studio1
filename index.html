@@ -1913,21 +1913,50 @@
   // ============================================================
   // CONTACT FORM
   // ============================================================
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
+  const form       = document.getElementById('contact-form');
+  const success    = document.getElementById('form-success');
+  const submitBtn  = form.querySelector('button[type="submit"]');
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    // Basic validation
     const name    = form.querySelector('#name').value.trim();
     const email   = form.querySelector('#email').value.trim();
+    const company = form.querySelector('#company').value.trim();
     const message = form.querySelector('#message').value.trim();
 
     if (!name || !email || !message) return;
 
-    form.style.display = 'none';
-    success.classList.add('show');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet…';
+
+    let errorEl = form.querySelector('.form-error');
+    if (errorEl) errorEl.remove();
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company, message }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Unbekannter Fehler');
+      }
+
+      form.style.display = 'none';
+      success.classList.add('show');
+    } catch (err) {
+      errorEl = document.createElement('p');
+      errorEl.className = 'form-error';
+      errorEl.style.cssText = 'color:#f87171;font-size:14px;margin-top:12px;text-align:center;';
+      errorEl.textContent = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an hallo@baalbaki-web.ch.';
+      form.appendChild(errorEl);
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Anfrage senden';
+    }
   });
 </script>
 </body>
