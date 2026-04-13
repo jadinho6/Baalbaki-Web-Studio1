@@ -1129,9 +1129,7 @@
       .project-info { padding: 40px; }
       .project-preview { min-height: 260px; }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .angebot-inner { grid-template-columns: 1fr; gap: 52px; }
-      .angebot-switcher-inner { flex-direction: column; width: 100%; max-width: 340px; border-radius: 20px; }
-      .angebot-tab { justify-content: center; border-radius: 14px; }
+      .angebot-inner { grid-template-columns: 1fr; gap: 40px; }
       .ablauf-steps { grid-template-columns: 1fr; }
       .ablauf-steps::before { display: none; }
       .faq-inner { grid-template-columns: 1fr; gap: 52px; }
@@ -1162,8 +1160,22 @@
       .stat-num { font-size: 1.8rem; }
       .stat-num.gold { font-size: 1.1rem; }
       .warum { padding: 100px 0 60px; }
-      .projekte, .leistungen, .angebot, .ablauf { padding: 36px 20px; }
-      .angebot { padding: 28px 20px; }
+      .projekte, .leistungen, .ablauf { padding: 36px 20px; }
+      .angebot { padding: 48px 24px 60px; overflow-x: hidden; }
+      .angebot-container { max-width: 100%; overflow-x: hidden; }
+      .angebot-switcher { margin-bottom: 20px; }
+      .angebot-switcher-inner { flex-direction: row; width: fit-content; max-width: calc(100vw - 40px); border-radius: 9999px; }
+      .angebot-tab { font-size: 13px; padding: 10px 16px; border-radius: 9999px; }
+      .tab-badge { display: none; }
+      .angebot-panel { max-width: 100%; overflow-x: hidden; }
+      .angebot-inner { grid-template-columns: 1fr; gap: 32px; max-width: 100%; }
+      .price-amount { font-size: 36px; }
+      .angebot-card { max-width: 100%; }
+      .angebot-card-body { padding: 24px 20px; }
+      .badge-wrap { padding: 9px 16px; }
+      .badge-wrap span { font-size: 10px; }
+      .badge-wrap-neutral { padding: 9px 16px; }
+      .badge-wrap-neutral span { font-size: 10px; }
       .faq { padding: 72px 20px 48px; }
       .cta-section { padding: 60px 20px; }
       .kontakt { padding: 52px 20px 72px; }
