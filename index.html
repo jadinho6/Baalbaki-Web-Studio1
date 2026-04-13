@@ -650,13 +650,81 @@
     /* ============================================================
        ANGEBOT
     ============================================================ */
+    /* ============================================================
+       ANGEBOT
+    ============================================================ */
     .angebot {
-      padding: 64px 48px;
+      padding: 80px 48px;
       background: linear-gradient(to bottom, var(--bg) 0, var(--surface) 80px, var(--surface) calc(100% - 80px), var(--bg) 100%);
     }
-    .angebot-inner {
+    .angebot-container {
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    /* Switcher */
+    .angebot-switcher {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+    .angebot-switcher-inner {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 5px;
+      gap: 4px;
+    }
+    .angebot-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color var(--t), background var(--t), box-shadow var(--t);
+      white-space: nowrap;
+    }
+    .angebot-tab:hover:not(.active) { color: var(--white); }
+    .angebot-tab.active {
+      background: var(--gold);
+      color: #0D0D0D;
+      box-shadow: 0 2px 12px rgba(201,168,76,0.3);
+    }
+    .tab-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0,0,0,0.18);
+      color: var(--gold);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(201,168,76,0.35);
+      transition: color var(--t), background var(--t), border-color var(--t);
+    }
+    .angebot-tab.active .tab-badge {
+      background: rgba(0,0,0,0.2);
+      color: #0D0D0D;
+      border-color: rgba(0,0,0,0.15);
+    }
+
+    /* Panel transitions */
+    .angebot-panel { display: none; }
+    .angebot-panel.active {
+      display: block;
+      animation: panelFadeIn 0.35s ease both;
+    }
+    @keyframes panelFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Grid layout */
+    .angebot-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
@@ -671,8 +739,10 @@
       margin-bottom: 16px;
     }
     .angebot-desc { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
-    .price-block { margin-bottom: 36px; }
-    .price-ab { font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* Price blocks */
+    .price-block { margin-bottom: 24px; }
+    .price-ab { font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
     .price-amount {
       font-size: clamp(52px, 6vw, 72px);
       font-weight: 900;
@@ -681,18 +751,40 @@
       line-height: 1;
     }
     .price-line { width: 72px; height: 3px; background: var(--gold); border-radius: 2px; margin-top: 10px; }
+    .price-note { font-size: 14px; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
+    .price-block-dual { margin-bottom: 24px; }
+    .price-setup-line {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .price-setup-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
+    /* Checklist */
     .check-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 36px; }
     .check-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--muted); line-height: 1.55; }
     .check-icon { flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px; }
     .check-icon.green { color: var(--green); }
     .check-icon.blue { color: #60A5FA; }
 
+    /* Cards */
     .angebot-card {
       background: var(--bg);
       border: 1px solid var(--gold);
       border-radius: var(--radius-lg);
       overflow: hidden;
+    }
+    .angebot-card-glow {
+      box-shadow: 0 0 40px rgba(201,168,76,0.14), 0 0 80px rgba(201,168,76,0.06);
     }
     .badge-wrap {
       padding: 11px 24px;
@@ -1026,6 +1118,8 @@
       .project-preview { min-height: 260px; }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .angebot-inner { grid-template-columns: 1fr; gap: 52px; }
+      .angebot-switcher-inner { flex-direction: column; width: 100%; max-width: 340px; border-radius: 20px; }
+      .angebot-tab { justify-content: center; border-radius: 14px; }
       .ablauf-steps { grid-template-columns: 1fr; }
       .ablauf-steps::before { display: none; }
       .faq-inner { grid-template-columns: 1fr; gap: 52px; }
@@ -1554,57 +1648,131 @@
      ANGEBOT
 ============================================================ -->
 <section class="angebot" id="angebot">
-  <div class="angebot-inner">
-    <div class="reveal">
-      <span class="label-tag angebot-label">Unser Angebot</span>
-      <h2 class="angebot-title">Website erstellen lassen</h2>
-      <p class="angebot-desc">Eine professionelle Website, die Kunden überzeugt — ohne technisches Know-how, ohne versteckte Kosten, ohne Stress.</p>
-      <div class="price-block">
-        <div class="price-ab">ab</div>
-        <div class="price-amount">CHF 2'900</div>
-        <div class="price-line"></div>
+  <div class="angebot-container">
+
+    <!-- Toggle Switcher -->
+    <div class="angebot-switcher reveal">
+      <div class="angebot-switcher-inner">
+        <button class="angebot-tab active" data-panel="paket1">Website kaufen</button>
+        <button class="angebot-tab" data-panel="paket2">
+          Website + Betreuung
+          <span class="tab-badge">Empfohlen</span>
+        </button>
       </div>
-      <p style="color:#A0A0A0;">Kein Abo. Keine versteckten Kosten. Sie bezahlen einmal — und besitzen Ihre Website.</p>
-      <a href="#kontakt" class="btn btn--primary" style="margin-top:2rem;">Projekt anfragen</a>
     </div>
 
-    <div class="reveal reveal-d2">
-      <div class="angebot-card">
-        <div class="badge-wrap">
-          <span>Empfohlen</span>
+    <!-- Panel 1: Website kaufen -->
+    <div class="angebot-panel active" id="paket1">
+      <div class="angebot-inner">
+        <div class="reveal">
+          <span class="label-tag angebot-label">UNSER ANGEBOT</span>
+          <h2 class="angebot-title">Website erstellen lassen</h2>
+          <p class="angebot-desc">Eine professionelle Website, die Kunden überzeugt — ohne technisches Know-how, ohne versteckte Kosten, ohne Stress.</p>
+          <div class="price-block">
+            <div class="price-ab">Einmalig</div>
+            <div class="price-amount">CHF 2'900</div>
+            <div class="price-line"></div>
+          </div>
+          <p class="price-note">Kein Abo. Keine versteckten Kosten. Sie bezahlen einmal – und besitzen Ihre Website.</p>
+          <a href="#kontakt" class="btn btn--primary">Projekt anfragen</a>
         </div>
-        <div class="angebot-card-body">
-          <h3 class="angebot-card-title">Was enthalten ist</h3>
-          <ul class="check-list">
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Individuelles Design und Konzept
-            </li>
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Bis zu 5 Seiten oder Sektionen
-            </li>
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Kontaktformular und Google Maps
-            </li>
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Domain und Hosting-Setup
-            </li>
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              SSL-Zertifikat und DSGVO-konform
-            </li>
-            <li>
-              <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Übergabegespräch und Dokumentation
-            </li>
-          </ul>
-          <p class="angebot-note">Der genaue Preis richtet sich nach Umfang und Anforderungen. Wir erstellen Ihnen gerne ein kostenloses Angebot.</p>
+        <div class="reveal reveal-d2">
+          <div class="angebot-card">
+            <div class="angebot-card-body">
+              <h3 class="angebot-card-title">Was enthalten ist</h3>
+              <ul class="check-list">
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Individuelles Design und Konzept
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Bis zu 5 Seiten oder Sektionen
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Kontaktformular und Google Maps
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Domain- und Hosting-Setup (Anleitung inklusive)
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  SSL-Zertifikat und DSGVO-konform
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Übergabegespräch und vollständige Dokumentation
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  GitHub-Repository gehört Ihnen
+                </li>
+              </ul>
+              <p class="angebot-note">Der genaue Preis richtet sich nach Umfang und Anforderungen. Wir erstellen Ihnen gerne ein kostenloses Angebot.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Panel 2: Website + Betreuung -->
+    <div class="angebot-panel" id="paket2">
+      <div class="angebot-inner">
+        <div class="reveal">
+          <span class="label-tag angebot-label">RUNDUM-SORGLOS</span>
+          <h2 class="angebot-title">Website + alles inklusive</h2>
+          <p class="angebot-desc">Wir kümmern uns um alles – Domain, Hosting, Updates und Support. Sie fokussieren sich auf Ihr Geschäft.</p>
+          <div class="price-block-dual">
+            <div class="price-setup-line">CHF 2'900 Einmalig</div>
+            <div class="price-ab">Monatlich</div>
+            <div class="price-amount">+ CHF 49</div>
+            <div class="price-line"></div>
+          </div>
+          <p class="price-note">Einmalige Erstellung, danach monatlich kündbar. Keine versteckten Kosten.</p>
+          <a href="#kontakt" class="btn btn--primary">Projekt anfragen</a>
+        </div>
+        <div class="reveal reveal-d2">
+          <div class="angebot-card angebot-card-glow">
+            <div class="badge-wrap">
+              <span>Empfohlen</span>
+            </div>
+            <div class="angebot-card-body">
+              <h3 class="angebot-card-title">Was enthalten ist</h3>
+              <ul class="check-list">
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Domain-Registrierung und jährliche Erneuerung
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Hosting auf schneller, professioneller Infrastruktur
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  SSL-Zertifikat automatisch erneuert
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Kleine Textanpassungen auf Anfrage
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Technischer Support per E-Mail
+                </li>
+                <li>
+                  <svg class="check-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Kein technischer Aufwand für Sie
+                </li>
+              </ul>
+              <p class="angebot-note">Monatlich kündbar. Mindestlaufzeit 12 Monate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1881,6 +2049,21 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ============================================================
+  // ANGEBOT PACKAGE TOGGLE
+  // ============================================================
+  document.querySelectorAll('.angebot-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.panel;
+      document.querySelectorAll('.angebot-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.angebot-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const panel = document.getElementById(targetId);
+      panel.classList.add('active');
+      panel.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    });
+  });
 
   // ============================================================
   // FAQ ACCORDION
