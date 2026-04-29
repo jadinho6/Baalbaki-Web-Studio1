@@ -53,7 +53,7 @@ Diese Personen sind oft nicht technikaffin. Die Website muss sofort Vertrauen au
 - Volle Viewport-Höhe
 - Links: Label "Webdesign für Schweizer KMU", grosse Headline, Subtext, zwei Buttons
 - Rechts: Drei gestapelte Browser-Mockup-Fenster in den Farben der drei Demo-Projekte
-- Unter Hero: Stats-Bar mit 4 Zahlen: "3 Demo-Projekte", "ab CHF 2'900", "2–4 Wochen Lieferzeit", "100% Schweizer KMU"
+- Unter Hero: Stats-Bar mit 4 Zahlen: "3 Demo-Projekte", "ab CHF 1'900", "2–4 Wochen Lieferzeit", "100% Schweizer KMU"
 
 ### 3. Referenz-Projekte
 Drei Projekte, jeweils volle Breite, abwechselnd links/rechts Layout:
@@ -82,7 +82,7 @@ Drei Projekte, jeweils volle Breite, abwechselnd links/rechts Layout:
 
 ### 5. Angebot
 - Dunkle Section
-- Links: Headline, Preis "ab CHF 2'900" in Gold, 5 Bullet Points, CTA Button
+- Links: Headline, Preis "ab CHF 1'900" in Gold, 5 Bullet Points, CTA Button
 - Rechts: Card mit "Was enthalten ist" (6 Punkte), "EMPFOHLEN" Badge in Gold
 
 ### 6. Ablauf
