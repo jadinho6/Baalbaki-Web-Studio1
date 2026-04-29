@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://baalbaki-web-studio.ch/sitemap.xml
